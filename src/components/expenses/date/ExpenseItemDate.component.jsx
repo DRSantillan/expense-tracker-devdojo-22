@@ -1,5 +1,4 @@
-import React from 'react';
-import { getFormattedDates } from '../../utilities/utilities.helpers';
+import { getFormattedDates } from '../../../utilities/utilities.helpers';
 import './ExpenseItemDate.styles.scss';
 
 const ExpenseItemDate = ({ date }) => {

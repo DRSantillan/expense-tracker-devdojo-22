@@ -1,7 +1,6 @@
-import React from 'react'
-import ExpenseItem from '../expense-item/ExpenseItem.component';
+import ExpenseItem from '../item/ExpenseItem.component';
 import './ExpenseItemList.styles.scss'
-import Card from '../card/Card.component';
+import Card from '../../ui/card/Card.component';
 
 const ExpenseItemList = ({expenses}) => {
     

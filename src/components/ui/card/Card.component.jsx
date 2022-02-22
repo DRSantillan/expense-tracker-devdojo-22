@@ -1,4 +1,3 @@
-import React from 'react';
 import './Card.styles.scss';
 
 const Card = ({ className, children }) => {

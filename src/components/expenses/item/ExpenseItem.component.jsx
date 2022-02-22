@@ -1,7 +1,6 @@
-import React from 'react';
-import ExpenseItemDate from '../expense-date/ExpenseItemDate.component';
+import ExpenseItemDate from '../date/ExpenseItemDate.component';
 import './ExpenseItem.styles.scss';
-import Card from '../card/Card.component';
+import Card from '../../ui/card/Card.component';
 
 const ExpenseItem = ({ date, title, amount }) => {
 	return (
