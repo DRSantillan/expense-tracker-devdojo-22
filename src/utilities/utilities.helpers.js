@@ -1,7 +1,8 @@
 export const getFormattedDates = (date) => {
-    const month = date.toLocaleString('en-US', { month: 'long' });
-	const day = date.toLocaleString('en-US', { day: '2-digit' });
-	const year = date.getFullYear();
+    const formattedDate = new Date(date)
+    const month = formattedDate.toLocaleString('en-US', { month: 'long' });
+	const day = formattedDate.toLocaleString('en-US', { day: '2-digit' });
+	const year = formattedDate.toLocaleString('en-US', { year: 'numeric' });
 
     return { month, day, year}
 }
