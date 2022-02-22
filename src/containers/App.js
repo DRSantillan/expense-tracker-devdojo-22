@@ -1,24 +1,26 @@
 import { useState } from 'react';
 import NewExpense from '../components/expenses/new/ExpenseNew.component';
-import ExpenseItemList from '../components/expenses/list/ExpenseItemList.component';
+import Expenses from '../components/expenses/expenses/Expenses.components';
 
 import { database } from '../db/database';
 
 function App() {
+	// init state for the database
+	
 	const [expenseDB, setExpenseDB] = useState(database);
 
+	// add an expense to the existing state
 	const addExpenseHandler = expense => {
-		console.log('inside app');
-		console.log(expense, ' expense from expense form');
 		setExpenseDB(prevState => ([
 			...prevState,
 			expense,
 		]));
 	};
+	//
 	return (
 		<>
 			<NewExpense onExpenseChange={addExpenseHandler} />
-			<ExpenseItemList expenses={expenseDB} />
+			<Expenses expenses={expenseDB} />
 		</>
 	);
 }

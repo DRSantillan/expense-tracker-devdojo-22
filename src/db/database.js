@@ -10,18 +10,18 @@ export const database = [
 		id: 3,
 		title: 'Groceries',
 		amount: 89.0,
-		date: new Date(2022, 2, 22),
+		date: new Date(2020, 2, 22),
 	},
 	{
 		id: 4,
 		title: 'Vape Products',
 		amount: 380.35,
-		date: new Date(2022, 2, 22),
+		date: new Date(2020, 2, 22),
 	},
 	{
 		id: 5,
 		title: 'Online Course',
 		amount: 27.89,
-		date: new Date(2022, 2, 22),
+		date: new Date(2021, 2, 22),
 	},
 ];
