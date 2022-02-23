@@ -1,7 +1,7 @@
 import ExpenseItem from '../item/ExpenseItem.component';
 import './ExpensesList.styles.scss';
 
-const ExpensesList = ({ expenses, year }) => {
+const ExpensesList = ({ expenses, year, onDelete }) => {
 	// display conditional content based on filtered year
 
 	if (!expenses.length)
@@ -14,9 +14,11 @@ const ExpensesList = ({ expenses, year }) => {
 	// clean code just vars
 	return (
 		<ul className='expenses-list'>
-			{expenses.map(expense => (
-				<ExpenseItem key={expense.id} {...expense} />
-			))}
+			{expenses
+				.sort((a, b) => a.id - b.id)
+				.map(expense => (
+					<ExpenseItem key={expense.id} {...expense} onDelete={onDelete} />
+				))}
 		</ul>
 	);
 };

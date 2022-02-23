@@ -6,21 +6,30 @@ import { database } from '../db/database';
 
 function App() {
 	// init state for the database
-	
 	const [expenseDB, setExpenseDB] = useState(database);
 
 	// add an expense to the existing state
 	const addExpenseHandler = expense => {
-		setExpenseDB(prevState => ([
-			...prevState,
-			expense,
-		]));
+		setExpenseDB(prevState => [...prevState, expense]);
+	};
+	//
+	const deleteExpenseItemHandler = id => {
+		if (window.confirm('Are you sure you want to delete this expense?')) {
+			const updatedExpenseDB = expenseDB.filter(
+				expense => expense.id !== id
+			);
+			console.log(updatedExpenseDB);
+			setExpenseDB(updatedExpenseDB);
+		}
 	};
 	//
 	return (
 		<>
 			<NewExpense onExpenseChange={addExpenseHandler} />
-			<Expenses expenses={expenseDB} />
+			<Expenses
+				expenses={expenseDB}
+				onDelete={deleteExpenseItemHandler}
+			/>
 		</>
 	);
 }

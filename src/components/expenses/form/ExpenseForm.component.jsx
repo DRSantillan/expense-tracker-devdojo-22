@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import './ExpenseForm.styles.scss';
 
-const ExpenseForm = ({ onSaveExpenseData }) => {
+const ExpenseForm = ({ onSaveExpenseData, hideForm }) => {
 	const [formData, setFormData] = useState({
 		title: '',
 		amount: '',
 		date: '',
 	});
+	
 	// destructure the required form fields
 	const { title, amount, date } = formData;
 
@@ -21,6 +22,7 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
 			amount: '',
 			date: '',
 		});
+		hideForm()
 	};
 	const onFormChangeHandler = event => {
         console.log(event.target.value)
@@ -67,6 +69,7 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
 					</div>
 				</div>
 				<div className='new-expense__actions'>
+					<button type='button' onClick={hideForm}>Cancel</button>
 					<button type='Submit'>Add New Expense</button>
 				</div>
 			</form>

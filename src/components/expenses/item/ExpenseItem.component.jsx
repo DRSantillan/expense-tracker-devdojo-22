@@ -2,8 +2,9 @@ import { useState } from 'react';
 import ExpenseItemDate from '../date/ExpenseItemDate.component';
 import './ExpenseItem.styles.scss';
 import Card from '../../ui/card/Card.component';
+import { MdDelete } from 'react-icons/md';
 
-const ExpenseItem = ({ date, title, amount }) => {
+const ExpenseItem = ({ id,date, title, amount,onDelete }) => {
 	const [itemTitle, setItemTitle] = useState(title);
 	return (
 		<li>
@@ -13,6 +14,13 @@ const ExpenseItem = ({ date, title, amount }) => {
 					<h2>{itemTitle}</h2>
 					<div className='expense-item__price'>${amount}</div>
 				</div>
+
+				<MdDelete className='delete-expense'
+					onClick={() => onDelete(id)}
+					fill='white'
+					size={40}
+					style={{ verticalAlign: 'middle' }}
+				/>
 			</Card>
 		</li>
 	);
