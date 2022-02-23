@@ -25,6 +25,9 @@ function App() {
 	//
 	return (
 		<>
+			<h2 style={{ textAlign: 'center', color: 'white' }}>
+				Personal Expense Tracker - DEVDOJO22
+			</h2>
 			<NewExpense onExpenseChange={addExpenseHandler} />
 			<Expenses
 				expenses={expenseDB}
